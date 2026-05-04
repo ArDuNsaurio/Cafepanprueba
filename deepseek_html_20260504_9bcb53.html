@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café con Pan - Gijón</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #faf7f2;
+        }
+
+        /* Header / Hero */
+        .hero {
+            background: linear-gradient(135deg, #5c3d2e 0%, #8b5e3c 40%, #a0724a 70%, #c4956a 100%);
+            color: white;
+            padding: 3rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .logo-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            font-weight: 300;
+            opacity: 0.95;
+            margin-bottom: 1.5rem;
+        }
+
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(10px);
+            padding: 0.7rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .stars {
+            color: #ffd700;
+            letter-spacing: 2px;
+        }
+
+        /* Navigation */
+        .nav-bar {
+            background: white;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 0;
+        }
+
+        .nav-container a {
+            text-decoration: none;
+            color: #5c3d2e;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-container a:hover {
+            background: #faf7f2;
+            border-bottom-color: #8b5e3c;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            margin-bottom: 3rem;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: #5c3d2e;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(90deg, #8b5e3c, #c4956a);
+            border-radius: 2px;
+        }
+
+        /* Info Cards */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .info-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
+        .info-card i {
+            font-size: 2.5rem;
+            color: #8b5e3c;
+            margin-bottom: 1rem;
+        }
+
+        .info-card h3 {
+            font-size: 1.3rem;
+            color: #5c3d2e;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Horario */
+        .schedule-container {
+            background: white;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+            padding: 1rem 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .schedule-table th {
+            background: #faf7f2;
+            color: #5c3d2e;
+            font-weight: 700;
+        }
+
+        .schedule-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .status-open {
+            color: #2e7d32;
+            font-weight: 700;
+        }
+
+        .status-closed {
+            color: #c62828;
+            font-weight: 700;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .open-badge {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .closed-badge {
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        /* Mapa */
+        .map-container {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            height: 350px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* CTA Buttons */
+        .cta-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #8b5e3c;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5c3d2e;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(139, 94, 60, 0.3);
+        }
+
+        .btn-outline {
+            background: white;
+            color: #8b5e3c;
+            border: 2px solid #8b5e3c;
+        }
+
+        .btn-outline:hover {
+            background: #faf7f2;
+            transform: translateY(-2px);
+        }
+
+        .btn i {
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #5c3d2e;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            opacity: 0.9;
+            margin-bottom: 0.3rem;
+        }
+
+        .price-range {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #8b5e3c;
+            margin-top: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-container a {
+                padding: 0.8rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .cta-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .schedule-table th,
+            .schedule-table td {
+                padding: 0.7rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Coffee animation */
+        @keyframes steam {
+            0%, 100% { opacity: 0.3; transform: translateY(0); }
+            50% { opacity: 0.8; transform: translateY(-10px); }
+        }
+
+        .steam-icon {
+            display: inline-block;
+            animation: steam 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <span class="logo-icon">☕</span>
+            <h1>Café con Pan</h1>
+            <p class="tagline">El auténtico sabor de Gijón, desde el primer café de la mañana</p>
+            <div class="rating-badge">
+                <span class="stars">★ ★ ★ ★ ☆</span>
+                <span>4,9</span>
+                <span>(152 reseñas)</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <a href="#info">Información</a>
+            <a href="#horario">Horario</a>
+            <a href="#ubicacion">Ubicación</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Información General -->
+        <section id="info">
+            <h2>📍 Información</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <i class="fa-solid fa-utensils"></i>
+                    <h3>Tipo de local</h3>
+                    <p>Cafetería tradicional</p>
+                    <p class="price-range">💶 1-10 € por persona</p>
+                </div>
+                <div class="info-card">
+                    <i class="fa-solid fa-clock"></i>
+                    <h3>Estado actual</h3>
+                    <p><span class="status-badge open-badge"><i class="fa-solid fa-circle-check"></i> Abierto ahora</span></p>
+                    <p style="margin-top: 0.5rem;">Lunes a Viernes: 8:00–15:00</p>
+                </div>
+                <div class="info-card">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h3>Dirección</h3>
+                    <p>C. Juan Alvargonzález, 64, bajo 2<br>Centro, 33208 Gijón, Asturias</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Horario -->
+        <section id="horario">
+            <h2>🕒 Horario de apertura</h2>
+            <div class="schedule-container">
+                <p style="margin-bottom: 1.5rem; color: #666;">
+                    <i class="fa-solid fa-circle-info"></i> 
+                    <em>Actualizado por teléfono hace 1 semana</em>
+                </p>
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Día</th>
+                            <th>Horario</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="schedule-body">
+                        <!-- Se llena con JavaScript -->
+                    </tbody>
+                </table>
+                <p style="margin-top: 1.5rem; font-size: 0.9rem; color: #888;">
+                    * Fines de semana y festivos cerrado
+                </p>
+            </div>
+        </section>
+
+        <!-- Ubicación -->
+        <section id="ubicacion">
+            <h2>🗺️ Cómo llegar</h2>
+            <div class="info-grid" style="margin-bottom: 1.5rem;">
+                <div class="info-card">
+                    <i class="fa-solid fa-house"></i>
+                    <h3>Distancia</h3>
+                    <p>A solo 15 metros de tu ubicación</p>
+                </div>
+                <div class="info-card">
+                    <i class="fa-solid fa-car"></i>
+                    <h3>En coche</h3>
+                    <p>🏠 6 minutos</p>
+                </div>
+                <div class="info-card">
+                    <i class="fa-solid fa-person-walking"></i>
+                    <h3>Caminando</h3>
+                    <p>📍 1 minuto · 🚶‍♂️ 1 minuto</p>
+                </div>
+            </div>
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2891.876543210!2d-5.6611234!3d43.5456789!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDMyJzQ0LjQiTiA1wrAzOSc0MC4wIlc!5e0!3m2!1ses!2ses!4v1234567890" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Mapa de Café con Pan">
+                </iframe>
+            </div>
+        </section>
+
+        <!-- Contacto / CTA -->
+        <section id="contacto">
+            <h2>📞 Contacto</h2>
+            <div class="schedule-container" style="text-align: center;">
+                <p style="font-size: 1.2rem; margin-bottom: 2rem; color: #5c3d2e;">
+                    <i class="fa-solid fa-mug-hot steam-icon"></i> 
+                    ¡Te esperamos con el mejor café de Gijón!
+                </p>
+                <div class="cta-group">
+                    <a href="https://www.google.com/maps/dir/?api=1&destination=C.+Juan+Alvargonzález,+64,+bajo+2,+Centro,+33208+Gijón,+Asturias" 
+                       class="btn btn-primary" 
+                       target="_blank" 
+                       rel="noopener">
+                        <i class="fa-solid fa-map-pin"></i> Cómo llegar
+                    </a>
+                    <a href="https://wa.me/34000000000" 
+                       class="btn btn-outline" 
+                       target="_blank" 
+                       rel="noopener">
+                        <i class="fa-brands fa-whatsapp"></i> Contactar
+                    </a>
+                    <a href="#" 
+                       class="btn btn-outline" 
+                       id="share-btn">
+                        <i class="fa-solid fa-share-nodes"></i> Compartir
+                    </a>
+                    <a href="#" 
+                       class="btn btn-outline" 
+                       id="save-btn">
+                        <i class="fa-regular fa-bookmark"></i> Guardar
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p><strong>Café con Pan</strong> &copy; 2026</p>
+        <p>C. Juan Alvargonzález, 64, bajo 2 · Centro · 33208 Gijón, Asturias</p>
+        <p style="margin-top: 0.5rem;">☕ Cafetería tradicional · 1-10 € por persona</p>
+    </footer>
+
+    <script>
+        // Horario dinámico con estado actual
+        function renderSchedule() {
+            const schedule = [
+                { day: 'Lunes', hours: '8:00–15:00' },
+                { day: 'Martes', hours: '8:00–15:00' },
+                { day: 'Miércoles', hours: '8:00–15:00' },
+                { day: 'Jueves', hours: '8:00–15:00' },
+                { day: 'Viernes', hours: '8:00–15:00' },
+                { day: 'Sábado', hours: 'Cerrado' },
+                { day: 'Domingo', hours: 'Cerrado' }
+            ];
+
+            const now = new Date();
+            const currentDay = now.getDay(); // 0 = Domingo, 1 = Lunes, ... 6 = Sábado
+            const currentHour = now.getHours();
+            const currentMinute = now.getMinutes();
+            const currentTimeInMinutes = currentHour * 60 + currentMinute;
+
+            // Mapear día actual al índice del array (0 = Lunes, 6 = Domingo)
+            let dayIndex;
+            if (currentDay === 0) {
+                dayIndex = 6; // Domingo
+            } else {
+                dayIndex = currentDay - 1; // Lunes = 0, Martes = 1, ...
+            }
+
+            const tbody = document.getElementById('schedule-body');
+            tbody.innerHTML = '';
+
+            schedule.forEach((item, index) => {
+                const row = document.createElement('tr');
+                
+                // Determinar estado
+                let statusHTML = '';
+                let rowClass = '';
+                
+                if (item.hours === 'Cerrado') {
+                    statusHTML = '<span class="status-badge closed-badge">Cerrado</span>';
+                } else {
+                    // Horario laboral: comprobar si es el día actual y está en horario
+                    const [startStr, endStr] = item.hours.split('–');
+                    const [startH, startM] = startStr.split(':').map(Number);
+                    const [endH, endM] = endStr.split(':').map(Number);
+                    const startInMinutes = startH * 60 + startM;
+                    const endInMinutes = endH * 60 + endM;
+
+                    if (index === dayIndex && 
+                        currentTimeInMinutes >= startInMinutes && 
+                        currentTimeInMinutes < endInMinutes) {
+                        statusHTML = '<span class="status-badge open-badge">Abierto ahora</span>';
+                        rowClass = 'status-open';
+                    } else if (index === dayIndex) {
+                        statusHTML = '<span class="status-badge closed-badge">Cerrado</span>';
+                    } else {
+                        statusHTML = '<span class="status-badge open-badge">' + item.hours + '</span>';
+                    }
+                }
+
+                // Resaltar día actual
+                if (index === dayIndex) {
+                    row.style.background = '#fffdf7';
+                    row.style.fontWeight = '600';
+                }
+
+                row.innerHTML = `
+                    <td><strong>${item.day}</strong>${index === dayIndex ? ' <small style="color:#8b5e3c;">(Hoy)</small>' : ''}</td>
+                    <td>${item.hours}</td>
+                    <td>${statusHTML}</td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        // Botón Compartir (Web Share API)
+        document.getElementById('share-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            const shareData = {
+                title: 'Café con Pan - Gijón',
+                text: 'Descubre Café con Pan en Gijón. ☕ 4,9 ★ | 1-10 € | Abierto L-V 8:00-15:00',
+                url: window.location.href
+            };
+
+            if (navigator.share) {
+                navigator.share(shareData)
+                    .catch(err => console.log('Error al compartir:', err));
+            } else {
+                // Fallback: copiar al portapapeles
+                const textToCopy = `${shareData.title}\n${shareData.text}\n${shareData.url}`;
+                navigator.clipboard.writeText(textToCopy).then(() => {
+                    alert('✅ ¡Información copiada al portapapeles! Compártela con quien quieras.');
+                }).catch(() => {
+                    alert('No se pudo compartir automáticamente. Copia la URL manualmente.');
+                });
+            }
+        });
+
+        // Botón Guardar (simulación)
+        document.getElementById('save-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            const btn = this;
+            const icon = btn.querySelector('i');
+            
+            if (icon.classList.contains('fa-regular')) {
+                icon.classList.remove('fa-regular');
+                icon.classList.add('fa-solid');
+                btn.innerHTML = '<i class="fa-solid fa-bookmark"></i> Guardado';
+                btn.style.background = '#e8f5e9';
+                btn.style.borderColor = '#2e7d32';
+                btn.style.color = '#2e7d32';
+                alert('✅ ¡Café con Pan guardado en tus favoritos!');
+            } else {
+                icon.classList.remove('fa-solid');
+                icon.classList.add('fa-regular');
+                btn.innerHTML = '<i class="fa-regular fa-bookmark"></i> Guardar';
+                btn.style.background = 'white';
+                btn.style.borderColor = '#8b5e3c';
+                btn.style.color = '#8b5e3c';
+                alert('Se ha quitado de favoritos.');
+            }
+        });
+
+        // Inicializar al cargar
+        document.addEventListener('DOMContentLoaded', function() {
+            renderSchedule();
+            
+            // Actualizar cada minuto para mantener estado "Abierto ahora"
+            setInterval(renderSchedule, 60000);
+        });
+    </script>
+
+</body>
+</html>
