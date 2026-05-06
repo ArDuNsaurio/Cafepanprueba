@@ -3,9 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Café con Pan - Tostadas desde 1,50€ | Gijón</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+=======
+    <title>Café con Pan | Tostadas desde 1,50€ · Gijón</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Swiper CSS para carrusel táctil -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+    <style>
+        :root {
+            --color-primary: #6B3A2A;
+            --color-primary-light: #8B5E3C;
+            --color-primary-dark: #4A2518;
+            --color-accent: #C4733E;
+            --color-accent-hover: #A05A2C;
+            --color-cream: #FDFAF5;
+            --color-cream-dark: #F5EDE0;
+            --color-warm-white: #FFFAF5;
+            --color-gold: #D4A853;
+            --color-text: #2C1810;
+            --color-text-light: #6B5344;
+            --color-text-muted: #8B7355;
+            --color-white: #FFFFFF;
+            --color-success: #4A7C59;
+            --color-success-light: #E8F5E9;
+            --color-danger: #B84444;
+            --color-danger-light: #FFEBEE;
+            --border-radius: 16px;
+            --border-radius-lg: 20px;
+            --border-radius-sm: 12px;
+            --shadow-sm: 0 2px 12px rgba(0,0,0,0.04);
+            --shadow-md: 0 8px 30px rgba(0,0,0,0.08);
+            --shadow-lg: 0 15px 40px rgba(0,0,0,0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+>>>>>>> 956cc99 (modificacion 3)
         * {
             margin: 0;
             padding: 0;
@@ -13,6 +53,7 @@
         }
 
         body {
+<<<<<<< HEAD
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             line-height: 1.6;
             color: #3d2b1f;
@@ -34,10 +75,74 @@
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
+=======
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', sans-serif;
+            background-color: var(--color-cream);
+            color: var(--color-text);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            letter-spacing: -0.01em;
+        }
+
+        /* ===== TIPOGRAFÍA ===== */
+        .serif-font {
+            font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero-section {
+            background: linear-gradient(165deg, #3E1F12 0%, #5C3320 30%, #6B3A2A 50%, #7D4A35 70%, #8B5E3C 100%);
+            position: relative;
+            overflow: hidden;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 3rem 1.5rem;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -30%;
+            width: 160%;
+            height: 160%;
+            background: 
+                radial-gradient(circle at 25% 35%, rgba(255,255,255,0.04) 0%, transparent 50%),
+                radial-gradient(circle at 75% 65%, rgba(212,168,83,0.06) 0%, transparent 45%),
+                radial-gradient(circle at 50% 50%, rgba(255,255,255,0.02) 0%, transparent 70%);
+            animation: subtleDrift 12s ease-in-out infinite;
+        }
+
+        @keyframes subtleDrift {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(0.5%, -0.5%) rotate(0.2deg); }
+            66% { transform: translate(-0.3%, 0.3%) rotate(-0.1deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 520px;
+        }
+
+        .hero-icon {
+            font-size: 3.5rem;
+            color: var(--color-gold);
+            margin-bottom: 1.5rem;
+            display: block;
+            opacity: 0.9;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+>>>>>>> 956cc99 (modificacion 3)
         }
 
         .hero-badge {
             display: inline-block;
+<<<<<<< HEAD
             background: #e85d3a;
             color: white;
             padding: 0.5rem 1.8rem;
@@ -411,11 +516,543 @@
             box-shadow: 0 8px 25px rgba(0,0,0,0.06);
         }
 
+=======
+            background: rgba(196, 115, 62, 0.25);
+            color: #F5D5B8;
+            border: 1px solid rgba(196, 115, 62, 0.4);
+            padding: 0.5rem 1.6rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: var(--color-white);
+            letter-spacing: -0.5px;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+            margin-bottom: 0.5rem;
+            line-height: 1.15;
+        }
+
+        .hero-subtitle {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.8);
+            font-style: italic;
+            margin-bottom: 0.4rem;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+        }
+
+        .hero-features {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.8rem;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-feature i {
+            font-size: 0.9rem;
+            color: var(--color-gold);
+        }
+
+        .rating-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .rating-badge {
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            color: white;
+            font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .rating-number {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--color-gold);
+            line-height: 1;
+        }
+
+        .rating-stars i {
+            color: var(--color-gold);
+            font-size: 0.75rem;
+            margin: 0 1px;
+        }
+
+        .rating-text {
+            font-size: 0.8rem;
+            opacity: 0.8;
+            font-weight: 400;
+        }
+
+        .hero-status {
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .hero-status i {
+            color: #6FCF97;
+        }
+
+        /* ===== DESKTOP NAVIGATION ===== */
+        .navbar-custom {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .navbar-brand-custom {
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-weight: 700;
+            color: var(--color-primary) !important;
+            font-size: 1.2rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-link-custom {
+            color: var(--color-text-light) !important;
+            font-weight: 500;
+            font-size: 0.85rem;
+            padding: 0.5rem 1rem !important;
+            transition: var(--transition);
+            letter-spacing: 0.3px;
+            border-radius: 8px;
+        }
+
+        .nav-link-custom:hover,
+        .nav-link-custom.active {
+            color: var(--color-accent) !important;
+            background: var(--color-cream-dark);
+        }
+
+        /* ===== MOBILE BOTTOM NAVIGATION ===== */
+        .mobile-bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1030;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(0,0,0,0.06);
+            display: flex;
+            justify-content: space-around;
+            padding: 0.4rem 0 0.5rem;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.04);
+        }
+
+        .mobile-bottom-nav .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--color-text-muted);
+            font-size: 0.65rem;
+            font-weight: 600;
+            transition: var(--transition);
+            padding: 0.3rem 0.6rem;
+            border-radius: 10px;
+            letter-spacing: 0.3px;
+        }
+
+        .mobile-bottom-nav .nav-item i {
+            font-size: 1.2rem;
+            margin-bottom: 0.15rem;
+            transition: var(--transition);
+        }
+
+        .mobile-bottom-nav .nav-item.active {
+            color: var(--color-accent);
+        }
+
+        .mobile-bottom-nav .nav-item.active i {
+            transform: translateY(-2px);
+        }
+
+        /* ===== SECTION HEADERS ===== */
+        .section-header {
+            margin-bottom: 2rem;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--color-accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-size: 2rem;
+            color: var(--color-text);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+
+        .section-description {
+            color: var(--color-text-light);
+            font-size: 0.95rem;
+            max-width: 500px;
+            line-height: 1.6;
+        }
+
+        /* ===== CARDS ===== */
+        .card-custom {
+            background: var(--color-white);
+            border: none;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .card-custom:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(196, 115, 62, 0.15);
+        }
+
+        /* ===== TOSTADAS SECTION ===== */
+        .tostadas-section-wrapper {
+            background: linear-gradient(180deg, #FFFBF5 0%, #FDFAF5 100%);
+            border-radius: var(--border-radius-lg);
+            padding: 2.5rem 0;
+            border: 1px solid #EDE0D0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tostadas-section-wrapper::after {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: rgba(196, 115, 62, 0.03);
+            pointer-events: none;
+        }
+
+        .swiper {
+            padding: 1rem 0.5rem 3.5rem 0.5rem;
+        }
+
+        .swiper-slide {
+            height: auto;
+        }
+
+        .tostada-card {
+            background: var(--color-white);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        .tostada-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .tostada-img {
+            height: 170px;
+            background: linear-gradient(135deg, #F5EDE0 0%, #EDE0D0 50%, #E8D5C0 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .tostada-icon-bg {
+            font-size: 4rem;
+            color: rgba(107, 58, 42, 0.12);
+            transition: var(--transition);
+        }
+
+        .tostada-card:hover .tostada-icon-bg {
+            transform: scale(1.1);
+            color: rgba(196, 115, 62, 0.18);
+        }
+
+        .tostada-price-tag {
+            position: absolute;
+            bottom: 12px;
+            left: 12px;
+            background: rgba(44, 24, 16, 0.85);
+            color: var(--color-white);
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            backdrop-filter: blur(8px);
+            letter-spacing: 0.3px;
+        }
+
+        .tostada-body {
+            padding: 1.2rem 1.3rem;
+            text-align: left;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .tostada-body h5 {
+            font-family: 'Playfair Display', 'Georgia', serif;
+            color: var(--color-text);
+            margin-bottom: 0.3rem;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .tostada-body .toppings-text {
+            color: var(--color-text-light);
+            font-size: 0.82rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .swiper-pagination-bullet {
+            background: #D4C4B0;
+            opacity: 0.5;
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--color-accent) !important;
+            opacity: 1;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: var(--color-accent) !important;
+            background: var(--color-white);
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            box-shadow: var(--shadow-md);
+            border: 1px solid #EDE0D0;
+        }
+
+        .swiper-button-next::after,
+        .swiper-button-prev::after {
+            font-size: 1rem !important;
+            font-weight: bold;
+        }
+
+        /* ===== CATEGORY CARDS ===== */
+        .category-card-custom {
+            background: var(--color-white);
+            border-radius: var(--border-radius);
+            padding: 1.5rem 1rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            cursor: pointer;
+            border: 1px solid rgba(0,0,0,0.04);
+            height: 100%;
+        }
+
+        .category-card-custom:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(196, 115, 62, 0.2);
+        }
+
+        .category-icon-wrapper {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background: var(--color-cream-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 0.8rem;
+            transition: var(--transition);
+        }
+
+        .category-card-custom:hover .category-icon-wrapper {
+            background: var(--color-accent);
+            transform: scale(1.08);
+        }
+
+        .category-icon-wrapper i {
+            font-size: 1.5rem;
+            color: var(--color-accent);
+            transition: var(--transition);
+        }
+
+        .category-card-custom:hover .category-icon-wrapper i {
+            color: var(--color-white);
+        }
+
+        .category-card-custom h6 {
+            font-weight: 600;
+            color: var(--color-text);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+            letter-spacing: 0.2px;
+        }
+
+        /* ===== AMBIENTE / FEATURE CARDS ===== */
+        .feature-card {
+            background: var(--color-white);
+            border-radius: var(--border-radius);
+            padding: 1.8rem 1.2rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.04);
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .feature-icon-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--color-cream-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon-circle {
+            background: var(--color-primary-light);
+        }
+
+        .feature-icon-circle i {
+            font-size: 1.6rem;
+            color: var(--color-accent);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon-circle i {
+            color: var(--color-white);
+        }
+
+        .feature-card h6 {
+            font-weight: 700;
+            color: var(--color-text);
+            font-size: 0.95rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .feature-card p {
+            color: var(--color-text-light);
+            font-size: 0.8rem;
+            margin-bottom: 0;
+            line-height: 1.5;
+        }
+
+        /* ===== BUTTONS ===== */
+        .btn-primary-custom {
+            background: var(--color-accent);
+            color: var(--color-white);
+            border: none;
+            border-radius: 50px;
+            padding: 0.8rem 2rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .btn-primary-custom:hover {
+            background: var(--color-accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(196, 115, 62, 0.25);
+            color: var(--color-white);
+        }
+
+        .btn-outline-custom {
+            background: var(--color-white);
+            color: var(--color-text);
+            border: 1.5px solid #D4C4B0;
+            border-radius: 50px;
+            padding: 0.8rem 2rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 0.3px;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .btn-outline-custom:hover {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+            background: #FFFBF5;
+            transform: translateY(-2px);
+        }
+
+        .btn-sm-custom {
+            padding: 0.5rem 1.2rem;
+            font-size: 0.8rem;
+        }
+
+        /* ===== SCHEDULE TABLE ===== */
+>>>>>>> 956cc99 (modificacion 3)
         .schedule-table {
             width: 100%;
             border-collapse: collapse;
         }
 
+<<<<<<< HEAD
         .schedule-table th,
         .schedule-table td {
             padding: 0.9rem 1.2rem;
@@ -538,11 +1175,169 @@
                 width: 100%;
                 justify-content: center;
             }
+=======
+        .schedule-table th {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--color-text-muted);
+            font-weight: 700;
+            padding: 0.8rem 1rem;
+            border-bottom: 1px solid #EDE0D0;
+        }
+
+        .schedule-table td {
+            padding: 0.9rem 1rem;
+            border-bottom: 1px solid #F5EDE0;
+            font-size: 0.9rem;
+            vertical-align: middle;
+        }
+
+        .schedule-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .badge-status {
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            letter-spacing: 0.3px;
+        }
+
+        .badge-open {
+            background: var(--color-success-light);
+            color: var(--color-success);
+        }
+
+        .badge-closed {
+            background: var(--color-danger-light);
+            color: var(--color-danger);
+        }
+
+        .badge-neutral {
+            background: #F5F0EB;
+            color: var(--color-text-muted);
+        }
+
+        /* ===== MAP CONTAINER ===== */
+        .map-wrapper {
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(0,0,0,0.04);
+        }
+
+        /* ===== PET FRIENDLY BADGE ===== */
+        .pet-friendly-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--color-success-light);
+            color: var(--color-success);
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 0.3px;
+        }
+
+        /* ===== FOOTER ===== */
+        .footer-custom {
+            background: var(--color-primary-dark);
+            color: #D4C4B0;
+            padding: 2.5rem 1.5rem 6rem;
+            text-align: center;
+        }
+
+        .footer-brand {
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-size: 1.5rem;
+            color: var(--color-white);
+            margin-bottom: 0.3rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin: 0.8rem 0;
+        }
+
+        .footer-links a {
+            color: #B8A088;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--color-white);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (min-width: 768px) {
+            .hero-title {
+                font-size: 4.2rem;
+            }
+
+            .hero-section {
+                min-height: 75vh;
+            }
+
+            .mobile-bottom-nav {
+                display: none;
+            }
+
+            .footer-custom {
+                padding-bottom: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2.4rem;
+            }
+
+            .tostada-img {
+                height: 190px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .container {
+                max-width: 960px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .desktop-nav {
+                display: flex !important;
+            }
+            .mobile-bottom-nav {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 767.98px) {
+            .desktop-nav {
+                display: none !important;
+            }
+            .mobile-bottom-nav {
+                display: flex !important;
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 70px;
+>>>>>>> 956cc99 (modificacion 3)
         }
     </style>
 </head>
 <body>
 
+<<<<<<< HEAD
     <!-- HERO -->
     <header class="hero">
         <div class="hero-content">
@@ -655,10 +1450,178 @@
                     <i class="fa-solid fa-location-dot"></i>
                     <h3>Dirección</h3>
                     <p>C. Juan Alvargonzález, 64, bajo 2<br>Centro, 33208 Gijón, Asturias</p>
+=======
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero-section" id="inicio">
+        <div class="hero-content">
+            <i class="bi bi-cup-hot hero-icon"></i>
+            <span class="hero-badge">Tostadas desde 1,50 €</span>
+            <h1 class="hero-title">Café con Pan</h1>
+            <p class="hero-subtitle">La joya de El Llano, Gijón</p>
+            
+            <div class="hero-features">
+                <span class="hero-feature">
+                    <i class="bi bi-heart"></i> Atención personal
+                </span>
+                <span class="hero-feature">
+                    <i class="bi bi-droplet"></i> Impecable
+                </span>
+                <span class="hero-feature">
+                    <i class="bi bi-paw"></i> Pet Friendly
+                </span>
+            </div>
+
+            <div class="rating-container">
+                <div class="rating-badge">
+                    <span class="rating-number">5,0</span>
+                    <div>
+                        <div class="rating-stars">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <span class="rating-text">81 reseñas en Google</span>
+                    </div>
+                </div>
+            </div>
+
+            <p class="hero-status">
+                <i class="bi bi-circle-fill" style="font-size: 0.5rem;"></i> 
+                Abierto L-V · 8:00 – 15:00
+            </p>
+        </div>
+    </section>
+
+    <!-- ==================== DESKTOP NAVIGATION ==================== -->
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top desktop-nav">
+        <div class="container">
+            <a class="navbar-brand navbar-brand-custom" href="#inicio">
+                <i class="bi bi-cup-hot"></i> Café con Pan
+            </a>
+            <div class="navbar-nav flex-row gap-1">
+                <a class="nav-link nav-link-custom" href="#tostadas">Tostadas</a>
+                <a class="nav-link nav-link-custom" href="#menu">Carta</a>
+                <a class="nav-link nav-link-custom" href="#ambiente">Ambiente</a>
+                <a class="nav-link nav-link-custom" href="#horario">Horario</a>
+                <a class="nav-link nav-link-custom" href="#ubicacion">Ubicación</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="container py-4 py-md-5">
+
+        <!-- SECCIÓN TOSTADAS -->
+        <section class="mb-5" id="tostadas">
+            <div class="tostadas-section-wrapper px-3 px-md-5">
+                <div class="section-header text-center mb-4">
+                    <span class="section-label">Nuestra Especialidad</span>
+                    <h2 class="section-title d-block text-center">Tostadas Artesanas</h2>
+                    <p class="section-description text-center mx-auto">
+                        Base de pan artesano con los ingredientes más frescos. 
+                        Elige entre nuestras variedades o crea la tuya.
+                    </p>
+                </div>
+
+                <div class="swiper tostadasSwiper">
+                    <div class="swiper-wrapper" id="tostadasContainer"></div>
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev d-none d-md-flex"></div>
+                    <div class="swiper-button-next d-none d-md-flex"></div>
+                </div>
+
+                <p class="text-center mt-3 mb-0">
+                    <small class="text-muted">
+                        <i class="bi bi-info-circle"></i> 
+                        Todas las tostadas se pueden personalizar · Consulta al dueño
+                    </small>
+                </p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN CARTA / CATEGORÍAS -->
+        <section class="mb-5" id="menu">
+            <div class="section-header">
+                <span class="section-label">Nuestra Carta</span>
+                <h2 class="section-title">Todo lo que ofrecemos</h2>
+                <p class="section-description">
+                    Productos caseros, frescos y de calidad para desayunos y meriendas.
+                </p>
+            </div>
+            <div class="row g-3" id="categoriesContainer"></div>
+        </section>
+
+        <!-- SECCIÓN AMBIENTE -->
+        <section class="mb-5" id="ambiente">
+            <div class="section-header">
+                <span class="section-label">Por Qué Elegirnos</span>
+                <h2 class="section-title">Un lugar especial</h2>
+                <p class="section-description">
+                    Esto es lo que destacan nuestros 81 clientes en Google.
+                </p>
+            </div>
+            <div class="row g-3">
+                <div class="col-6 col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon-circle">
+                            <i class="bi bi-person-heart"></i>
+                        </div>
+                        <h6>Atención Cercana</h6>
+                        <p>El dueño te atiende personalmente con dedicación</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon-circle">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h6>Limpieza Total</h6>
+                        <p>Local impecable, cuidado al detalle</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon-circle">
+                            <i class="bi bi-paw"></i>
+                        </div>
+                        <h6>Pet Friendly</h6>
+                        <p>Tu perro es bienvenido y recibido con cariño</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon-circle">
+                            <i class="bi bi-cup-hot"></i>
+                        </div>
+                        <h6>Café de Calidad</h6>
+                        <p>Granos seleccionados, sabor inigualable</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon-circle">
+                            <i class="bi bi-flower1"></i>
+                        </div>
+                        <h6>Ambiente Íntimo</h6>
+                        <p>Tranquilo, relajante y acogedor</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon-circle">
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <h6>5,0 en Google</h6>
+                        <p>Máxima puntuación con 81 reseñas</p>
+                    </div>
+>>>>>>> 956cc99 (modificacion 3)
                 </div>
             </div>
         </section>
 
+<<<<<<< HEAD
         <!-- HORARIO -->
         <section id="horario">
             <h2><i class="fa-solid fa-clock"></i> Horario</h2>
@@ -700,10 +1663,92 @@
                     <i class="fa-solid fa-share-nodes"></i> Compartir
                 </a>
             </div>
+=======
+        <!-- SECCIÓN HORARIO -->
+        <section class="mb-5" id="horario">
+            <div class="section-header">
+                <span class="section-label">Horario</span>
+                <h2 class="section-title">Cuándo visitarnos</h2>
+                <p class="section-description">
+                    Abrimos de lunes a viernes en horario de mañana.
+                </p>
+            </div>
+            <div class="card-custom p-3 p-md-4">
+                <div class="table-responsive">
+                    <table class="schedule-table" id="scheduleTable">
+                        <thead>
+                            <tr>
+                                <th>Día</th>
+                                <th>Horario</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody id="scheduleBody"></tbody>
+                    </table>
+                </div>
+                <p class="text-muted small mt-3 mb-0">
+                    <i class="bi bi-info-circle"></i> 
+                    Fines de semana y festivos cerrado · Información actualizada
+                </p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN UBICACIÓN -->
+        <section class="mb-5" id="ubicacion">
+            <div class="section-header">
+                <span class="section-label">Ubicación</span>
+                <h2 class="section-title">Encuéntranos</h2>
+                <p class="section-description">
+                    En pleno corazón del barrio de El Llano, Gijón.
+                </p>
+            </div>
+            
+            <div class="map-wrapper mb-4">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2891.876543210!2d-5.6642213!3d43.5296163!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDMxJzQ2LjYiTiA1wrAzOSc1MS4yIlc!5e0!3m2!1ses!2ses!4v1234567890"
+                    width="100%"
+                    height="280"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Ubicación de Café con Pan">
+                </iframe>
+            </div>
+
+            <div class="d-flex flex-wrap gap-2 justify-content-center mb-4">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=C.+Juan+Alvargonzález,+64,+bajo+2,+Centro,+33208+Gijón,+Asturias"
+                   class="btn-primary-custom" target="_blank" rel="noopener">
+                    <i class="bi bi-geo-alt"></i> Cómo llegar
+                </a>
+                <a href="https://wa.me/34000000000" class="btn-outline-custom" target="_blank" rel="noopener">
+                    <i class="bi bi-whatsapp"></i> Contactar
+                </a>
+                <a href="#" class="btn-outline-custom" id="shareBtn">
+                    <i class="bi bi-share"></i> Compartir
+                </a>
+            </div>
+
+            <div class="text-center">
+                <p class="mb-1 fw-semibold" style="color: var(--color-text);">
+                    <i class="bi bi-geo-alt-fill" style="color: var(--color-accent);"></i> 
+                    C. Juan Alvargonzález, 64, bajo 2
+                </p>
+                <p class="text-muted small mb-2">Centro, 33208 Gijón, Asturias</p>
+                <span class="pet-friendly-badge">
+                    <i class="bi bi-paw-fill"></i> Pet Friendly
+                </span>
+                <p class="mt-3 text-muted small">
+                    <i class="bi bi-person-walking"></i> A 1 min caminando · 
+                    <i class="bi bi-car-front"></i> A 6 min en coche
+                </p>
+            </div>
+>>>>>>> 956cc99 (modificacion 3)
         </section>
 
     </main>
 
+<<<<<<< HEAD
     <footer>
         <div class="footer-logo">☕ Café con Pan</div>
         <p>C. Juan Alvargonzález, 64, bajo 2 · Centro · 33208 Gijón, Asturias</p>
@@ -909,12 +1954,206 @@
                 { day: 'Viernes', hours: '8:00–15:00' },
                 { day: 'Sábado', hours: 'Cerrado' },
                 { day: 'Domingo', hours: 'Cerrado' }
+=======
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer-custom">
+        <div class="footer-brand">
+            <i class="bi bi-cup-hot"></i> Café con Pan
+        </div>
+        <p class="small opacity-75 mb-2">La joya de El Llano · Gijón, Asturias</p>
+        <div class="footer-links">
+            <a href="#tostadas">Tostadas</a>
+            <a href="#menu">Carta</a>
+            <a href="#ambiente">Ambiente</a>
+            <a href="#horario">Horario</a>
+            <a href="#ubicacion">Ubicación</a>
+        </div>
+        <p class="small opacity-50 mt-2 mb-0">
+            <i class="bi bi-star-fill" style="color: #D4A853;"></i> 5,0 · 81 reseñas · 
+            <i class="bi bi-paw"></i> Pet Friendly
+        </p>
+    </footer>
+
+    <!-- ==================== MOBILE BOTTOM NAVIGATION ==================== -->
+    <nav class="mobile-bottom-nav">
+        <a href="#tostadas" class="nav-item active">
+            <i class="bi bi-grid-1x2"></i>
+            <span>Tostadas</span>
+        </a>
+        <a href="#menu" class="nav-item">
+            <i class="bi bi-menu-button-wide"></i>
+            <span>Carta</span>
+        </a>
+        <a href="#ambiente" class="nav-item">
+            <i class="bi bi-heart"></i>
+            <span>Info</span>
+        </a>
+        <a href="#horario" class="nav-item">
+            <i class="bi bi-clock"></i>
+            <span>Horario</span>
+        </a>
+        <a href="#ubicacion" class="nav-item">
+            <i class="bi bi-geo-alt"></i>
+            <span>Mapa</span>
+        </a>
+    </nav>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        // ==================== DATOS ====================
+        const tostadas = [
+            { 
+                nombre: 'Clásica', 
+                toppings: 'Aceite de oliva virgen extra y tomate triturado', 
+                precio: '1,50 €', 
+                icon: 'bi-bread-slice',
+                bgColor: '#FDF8F3'
+            },
+            { 
+                nombre: 'Aguacate', 
+                toppings: 'Aguacate fresco, tomate cherry y semillas de sésamo', 
+                precio: '2,80 €', 
+                icon: 'bi-puzzle',
+                bgColor: '#F2F6EE'
+            },
+            { 
+                nombre: 'Jamón Serrano', 
+                toppings: 'Jamón serrano de calidad y tomate natural', 
+                precio: '2,50 €', 
+                icon: 'bi-grid',
+                bgColor: '#FDF5F3'
+            },
+            { 
+                nombre: 'Queso Fundido', 
+                toppings: 'Mezcla de quesos fundidos con orégano', 
+                precio: '2,00 €', 
+                icon: 'bi-hexagon',
+                bgColor: '#FFFBF3'
+            },
+            { 
+                nombre: 'Vegana', 
+                toppings: 'Hummus cremoso, pepino fresco y brotes verdes', 
+                precio: '2,60 €', 
+                icon: 'bi-flower1',
+                bgColor: '#F2F8F0'
+            },
+            { 
+                nombre: 'Especial de la Casa', 
+                toppings: 'Huevo poché, bacon crujiente y aguacate', 
+                precio: '3,20 €', 
+                icon: 'bi-star',
+                bgColor: '#FFFDF5'
+            },
+        ];
+
+        const categorias = [
+            { nombre: 'Tostadas', icon: 'bi-grid-1x2' },
+            { nombre: 'Sándwiches', icon: 'bi-view-stacked' },
+            { nombre: 'Bizcochos', icon: 'bi-pie-chart' },
+            { nombre: 'Tartas', icon: 'bi-droplet' },
+            { nombre: 'Sin Lactosa', icon: 'bi-shield-check' },
+            { nombre: 'Vegetal', icon: 'bi-flower1' },
+            { nombre: 'Casero', icon: 'bi-house-heart' },
+            { nombre: 'Infusiones', icon: 'bi-cup-hot' },
+        ];
+
+        // ==================== RENDER TOSTADAS ====================
+        function renderTostadas() {
+            const container = document.getElementById('tostadasContainer');
+            container.innerHTML = '';
+
+            tostadas.forEach(t => {
+                const slide = document.createElement('div');
+                slide.className = 'swiper-slide';
+                slide.innerHTML = `
+                    <div class="tostada-card">
+                        <div class="tostada-img" style="background-color: ${t.bgColor};">
+                            <i class="bi ${t.icon} tostada-icon-bg"></i>
+                            <span class="tostada-price-tag">${t.precio}</span>
+                        </div>
+                        <div class="tostada-body">
+                            <h5>${t.nombre}</h5>
+                            <p class="toppings-text">${t.toppings}</p>
+                            <button class="btn-primary-custom btn-sm-custom w-100 justify-content-center" 
+                                    onclick="alert('Has seleccionado: ${t.nombre}\\nPrecio: ${t.precio}\\n\\nEl dueño te la prepara al momento con los mejores ingredientes.')">
+                                <i class="bi bi-hand-index"></i> Seleccionar
+                            </button>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(slide);
+            });
+
+            initSwiper();
+        }
+
+        function initSwiper() {
+            if (window.tostadasSwiper) {
+                window.tostadasSwiper.destroy(true, true);
+            }
+
+            window.tostadasSwiper = new Swiper('.tostadasSwiper', {
+                slidesPerView: 1.2,
+                spaceBetween: 18,
+                centeredSlides: true,
+                loop: false,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    480: { slidesPerView: 1.5, spaceBetween: 18 },
+                    768: { slidesPerView: 2.3, spaceBetween: 22, centeredSlides: false },
+                    992: { slidesPerView: 3, spaceBetween: 24, centeredSlides: false },
+                }
+            });
+        }
+
+        // ==================== RENDER CATEGORÍAS ====================
+        function renderCategorias() {
+            const container = document.getElementById('categoriesContainer');
+            container.innerHTML = '';
+
+            categorias.forEach(cat => {
+                const col = document.createElement('div');
+                col.className = 'col-6 col-md-3';
+                col.innerHTML = `
+                    <div class="category-card-custom" onclick="alert('Categoría: ${cat.nombre}\\n\\nTodo elaborado de forma casera con ingredientes frescos y de calidad.')">
+                        <div class="category-icon-wrapper">
+                            <i class="bi ${cat.icon}"></i>
+                        </div>
+                        <h6>${cat.nombre}</h6>
+                    </div>
+                `;
+                container.appendChild(col);
+            });
+        }
+
+        // ==================== RENDER HORARIO ====================
+        function renderHorario() {
+            const schedule = [
+                { day: 'Lunes', hours: '8:00 – 15:00' },
+                { day: 'Martes', hours: '8:00 – 15:00' },
+                { day: 'Miércoles', hours: '8:00 – 15:00' },
+                { day: 'Jueves', hours: '8:00 – 15:00' },
+                { day: 'Viernes', hours: '8:00 – 15:00' },
+                { day: 'Sábado', hours: 'Cerrado' },
+                { day: 'Domingo', hours: 'Cerrado' },
+>>>>>>> 956cc99 (modificacion 3)
             ];
 
             const now = new Date();
             const currentDay = now.getDay();
             const currentHour = now.getHours();
             const currentMinute = now.getMinutes();
+<<<<<<< HEAD
             const currentTimeInMinutes = currentHour * 60 + currentMinute;
             let dayIndex = currentDay === 0 ? 6 : currentDay - 1;
 
@@ -950,6 +2189,46 @@
 
                 row.innerHTML = `
                     <td><strong>${item.day}</strong>${index === dayIndex ? ' <small style="color:#e85d3a;">(Hoy)</small>' : ''}</td>
+=======
+            const currentTimeMinutes = currentHour * 60 + currentMinute;
+            let dayIndex = currentDay === 0 ? 6 : currentDay - 1;
+
+            const tbody = document.getElementById('scheduleBody');
+            tbody.innerHTML = '';
+
+            schedule.forEach((item, index) => {
+                let statusHTML = '';
+
+                if (item.hours === 'Cerrado') {
+                    statusHTML = '<span class="badge-status badge-closed"><i class="bi bi-lock"></i> Cerrado</span>';
+                } else {
+                    const [startStr, endStr] = item.hours.split(' – ');
+                    const [startH, startM] = startStr.split(':').map(Number);
+                    const [endH, endM] = endStr.split(':').map(Number);
+                    const startMin = startH * 60 + startM;
+                    const endMin = endH * 60 + endM;
+
+                    if (index === dayIndex && currentTimeMinutes >= startMin && currentTimeMinutes < endMin) {
+                        statusHTML = '<span class="badge-status badge-open"><i class="bi bi-unlock"></i> Abierto ahora</span>';
+                    } else if (index === dayIndex) {
+                        statusHTML = '<span class="badge-status badge-closed"><i class="bi bi-lock"></i> Cerrado</span>';
+                    } else {
+                        statusHTML = '<span class="badge-status badge-neutral"><i class="bi bi-clock"></i> ' + item.hours + '</span>';
+                    }
+                }
+
+                const row = document.createElement('tr');
+                if (index === dayIndex) {
+                    row.style.background = '#FFFDF8';
+                    row.style.fontWeight = '500';
+                }
+
+                row.innerHTML = `
+                    <td>
+                        <strong>${item.day}</strong>
+                        ${index === dayIndex ? '<small style="color: var(--color-accent);"> · Hoy</small>' : ''}
+                    </td>
+>>>>>>> 956cc99 (modificacion 3)
                     <td>${item.hours}</td>
                     <td>${statusHTML}</td>
                 `;
@@ -957,6 +2236,7 @@
             });
         }
 
+<<<<<<< HEAD
         // COMPARTIR
         document.getElementById('share-btn').addEventListener('click', function(e) {
             e.preventDefault();
@@ -970,16 +2250,75 @@
             } else {
                 navigator.clipboard.writeText(`${shareData.title}\n${shareData.text}\n${shareData.url}`)
                     .then(() => alert('✅ ¡Información copiada!'))
+=======
+        // ==================== COMPARTIR ====================
+        document.getElementById('shareBtn').addEventListener('click', function(e) {
+            e.preventDefault();
+            const shareData = {
+                title: 'Café con Pan · Gijón',
+                text: 'Café con Pan en El Llano, Gijón. Tostadas artesanas desde 1,50€, 5,0★ en Google y pet friendly. ¡Ven a conocernos!',
+                url: window.location.href
+            };
+            if (navigator.share) {
+                navigator.share(shareData).catch(() => {});
+            } else {
+                navigator.clipboard.writeText(`${shareData.title}\n${shareData.text}\n${shareData.url}`)
+                    .then(() => alert('Información copiada al portapapeles.'))
+>>>>>>> 956cc99 (modificacion 3)
                     .catch(() => alert('Copia la URL manualmente.'));
             }
         });
 
+<<<<<<< HEAD
         // INICIALIZAR
         document.addEventListener('DOMContentLoaded', () => {
             renderTostadas();
             updateCarousel();
             renderSchedule();
             setInterval(renderSchedule, 60000);
+=======
+        // ==================== ACTIVE NAV TRACKING ====================
+        function updateActiveNav() {
+            const sections = ['tostadas', 'menu', 'ambiente', 'horario', 'ubicacion'];
+            const mobileItems = document.querySelectorAll('.mobile-bottom-nav .nav-item');
+            const desktopLinks = document.querySelectorAll('.nav-link-custom');
+
+            let currentSection = 'tostadas';
+            sections.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    const rect = el.getBoundingClientRect();
+                    if (rect.top <= 180) {
+                        currentSection = id;
+                    }
+                }
+            });
+
+            mobileItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === '#' + currentSection) {
+                    item.classList.add('active');
+                }
+            });
+
+            desktopLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + currentSection) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // ==================== INIT ====================
+        document.addEventListener('DOMContentLoaded', () => {
+            renderTostadas();
+            renderCategorias();
+            renderHorario();
+            updateActiveNav();
+
+            setInterval(renderHorario, 60000);
+            window.addEventListener('scroll', updateActiveNav, { passive: true });
+>>>>>>> 956cc99 (modificacion 3)
         });
     </script>
 </body>
